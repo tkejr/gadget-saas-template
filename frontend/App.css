@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* This is your global CSS Stylesheet */
+/* Change on your own risk */
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+
+  .image-hero-section {
+    position: relative;
+    z-index: 2;
+    isolation: isolate;
+  }
+  .image-hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: 0;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0)
+    );
+  }
+  .image-hero-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: 0;
+    -webkit-mask-image: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0)
+    );
+  }
+
+  @media (max-width: 768px) {
+    .image-hero-section::before,
+    .image-hero-section::after {
+      width: 30px;
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}

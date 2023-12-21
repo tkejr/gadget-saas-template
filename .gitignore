@@ -1,0 +1,16 @@
+# System files
+.DS_Store
+
+# Folders to ignore
+.gadget/
+chrome-widget/
+node_modules/
+
+
+# Files to ignore
+package.json
+postcss.config.js
+tailwind.config.js
+twilio-integration.js
+vite.config.js
+yarn.lock
